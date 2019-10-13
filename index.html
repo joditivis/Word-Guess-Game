@@ -3,20 +3,19 @@
 
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial scale=1.0">
         <title>NYC Word Guess Game</title>
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     </head>
 
    <!--MAIN BODY-->
     <body>
-
-        <header>
-            <div class="img-header">
-                <img src="assets/images/glowingnyc.jpg" width="100%" height="500px" alt="New York City skyline cartoon">
-            </div>
-            <h1>New York City Word Guess!</h1>
+        <header class="header-container">
+            <img class="NYC" src="assets/images/nyc.jpg" width="100%" height="475px" alt="New York City skyline cartoon">
+            <div class="header-text">NEW YORK CITY WORD GUESS</div>           
         </header>
 
+    <!--Game rules and content-->
         <div class="main-game-box">
             <p id="directions-text">Press any key to start!</p>
             <p id="wins">Wins</p>
@@ -26,9 +25,15 @@
             <p id="already-guessed">Letters already guessed</p>
         </div>
 
+    <!--Page Audio-->
+        <div class="audio">
+            <audio src="assets/music/t-swift-welcometonewyork.mp3" controls>
+            <p>If you are reading this, it is because your browser does not support the audio element.</p>
+            </audio>
+        </div>
 
-    <!--LINK JAVASCRIPT-->
+    <!--Link JavaScript-->
         <script src="assets/javascript/game.js"></script>
-        
+
     </body>
 </html>

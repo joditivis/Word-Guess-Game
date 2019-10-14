@@ -1,4 +1,14 @@
-window.onload = function () {}
+window.onload = function () {
+
+    var words;
+    var lives;
+    var space;
+    var guesses = [ ];
+    var chosenWord;
+
+    var showLives = document.getElementById("lives");
+    var showWord = document.getElementById("word")
+}
 
 //Words that will filter throughout the game
 var words = [

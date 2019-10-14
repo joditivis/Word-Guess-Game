@@ -8,33 +8,22 @@
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     </head>
 
-   <!--MAIN BODY-->
+
     <body>
+    <!--Top of Page-->
         <header class="header-container">
             <img class="NYC" src="assets/images/nyc.jpg" width="100%" height="475px" alt="New York City skyline cartoon">
             <div class="header-text">NEW YORK CITY WORD GUESS</div>           
         </header>
 
-    <!--Game rules and content-->
+    <!--How to start-->
         <div class="wrapper">
             <p id="directions-text">Press any key to start!</p>
-            <p id="wins">Wins:</p>
-            <p id="current-word">Current word:</p>
-        <div class="hold">
-            <ul id="words">
-                <li class="guess">_</li>
-                <li class="guess">_</li>
-                <li class="guess">_</li>
-                <li class="guess">_</li>
-                <li class="guess">_</li>
-                <li class="guess">_</li>
-                <li class="guess">_</li>
-                <li class="guess">_</li>
-                <li class="guess">_</li>
-            </ul>
-        </div>
-            <p id="lives">Remaining guesses:</p>
-            <p id="already-guessed">Letters already guessed:</p>
+    <!--Game content-->
+            <p>Wins: <div id="wins">0</div></p>
+            <p>Current word: <div id="current-word">_ _ _ _ _ _ _</div></p>           
+            <p>Lives left: <div id="lives">10</div></p>
+            <p>Letters already guessed: <div id="already-guessed"></p>
         </div>
 
     <!--Page Audio-->

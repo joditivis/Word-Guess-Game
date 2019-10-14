@@ -16,17 +16,30 @@
         </header>
 
     <!--Game rules and content-->
-        <div class="main-game-box">
+        <div class="wrapper">
             <p id="directions-text">Press any key to start!</p>
-            <p id="wins">Wins</p>
-            <p id="current-word">Current word</p>
-            <p id="underscores">_ _ _ _ _ _ _ _</p>
-            <p id="guesses-remaining">Guesses Remaining</p>
-            <p id="already-guessed">Letters already guessed</p>
+            <p id="wins">Wins:</p>
+            <p id="current-word">Current word:</p>
+        <div class="hold">
+            <ul id="words">
+                <li class="guess">_</li>
+                <li class="guess">_</li>
+                <li class="guess">_</li>
+                <li class="guess">_</li>
+                <li class="guess">_</li>
+                <li class="guess">_</li>
+                <li class="guess">_</li>
+                <li class="guess">_</li>
+                <li class="guess">_</li>
+            </ul>
+        </div>
+            <p id="lives">Remaining guesses:</p>
+            <p id="already-guessed">Letters already guessed:</p>
         </div>
 
     <!--Page Audio-->
         <div class="audio">
+            <p class="audio-text">&#8681;Press play for music!</p>
             <audio src="assets/music/t-swift-welcometonewyork.mp3" controls>
             <p>If you are reading this, it is because your browser does not support the audio element.</p>
             </audio>

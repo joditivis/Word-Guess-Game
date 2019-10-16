@@ -17,14 +17,19 @@
         </header>
 
     <!--How to start-->
-        <div class="wrapper">
+    <div class="container">
+        <div class="start">
+            <p>What are some common things New York City is known for?</p>
             <p id="directions-text">Press any key to start!</p>
-    <!--Game content-->
-            <p>Wins: <div id="wins">0</div></p>
-            <p>Current word: <div id="current-word">_ _ _ _ _ _ _</div></p>           
-            <p>Lives left: <div id="lives">10</div></p>
-            <p>Letters already guessed: <div id="already-guessed"></p>
         </div>
+    <!--Game content-->
+        <div class="game">
+            <p>Current word: <div id="blank-word">_ _ _ _ _ _ _</div></p>
+            <p>Wins: <span id="wins">0</span></p>          
+            <p>Guesses left: <span id="lives">10</span></p>
+            <p>Letters already guessed: <span id="letter-guesses"></span></p>
+        </div>
+    </div>
 
     <!--Page Audio-->
         <div class="audio">

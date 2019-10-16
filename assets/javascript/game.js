@@ -1,3 +1,4 @@
+$(document).ready(function() {
 // GLOBAL VARIABLES
 var words = [
      "empire state building", 
@@ -21,16 +22,30 @@ var words = [
 
 var chosenWord = "";
 var lettersInWord = [];
-var numOfBlanks = 0
+var blankLetters = 0; 
 var blanksAndGuesses = [];
 var wrongGuesses = [];
 
 var winCount = 0;
-var guesses = 10;
+var guessesLeft = 10;
 
 // FUNCTIONS
-function startGame() {
-    chosenWord = words(math.floor(math.random() * chosenWord.length()))
+function gameStart() {   
+    chosenWord = words[Math.floor(Math.random() * words.length)];
+    lettersInWord = chosenWord.split("");
+    blankLetters = lettersInWord.length;
+
+    console.log(chosenWord);
+    console.log(lettersInWord);
+    console.log(blankLetters);
+
+    //reset for each round
+    guessesLeft = 10;
+    wrongGuesses = [];
+
 }
 
 // MAIN PROCESS
+gameStart()
+
+});

@@ -29,6 +29,8 @@ var winCount = 0;
 var guesses = 10;
 
 // FUNCTIONS
-
+function startGame() {
+    chosenWord = words(math.floor(math.random() * chosenWord.length()))
+}
 
 // MAIN PROCESS

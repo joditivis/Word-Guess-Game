@@ -35,8 +35,11 @@ function gameStart() {
     blankLetters = lettersInWord.length;
 
 //reset for each round
+function reset() {
     guessesLeft = 10;
+    blanksAndGuesses = [];
     wrongGuesses = [];
+
 
 //fill blanks and guesses with the number of letters in the chosen word
     for (var i = 0; i < blankLetters; i++) {
@@ -44,10 +47,10 @@ function gameStart() {
     }
 
 //connecting html aspects
-    document.getElementById("currentWord").innerHTML = blanksAndGuesses.join(" ");
+    document.getElementById("currentWord").innerHTML = blanksAndGuesses.join("   ");
     document.getElementById("lives").innerHTML = guessesLeft;
     document.getElementById("wins").innerHTML = winCount;
-    
+
 
 //logging to make sure it's showing up correctly
     console.log(chosenWord);
@@ -59,3 +62,5 @@ function gameStart() {
 
 // MAIN PROCESS
 gameStart()
+reset()
+}

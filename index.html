@@ -3,31 +3,35 @@
 
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial scale=1.0">
+        <!--<meta name="viewport" content="width=device-width, scale=1.0">-->
         <title>NYC Word Guess Game</title>
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
 
 
     <body>
     <!--Top of Page-->
         <header class="header-container">
-            <img class="NYC" src="assets/images/nyc.jpg" width="100%" height="475px" alt="New York City skyline cartoon">
+            <img class="NYC" src="assets/images/nyc.jpg" width="100%" height="420px" alt="New York City skyline cartoon">
             <div class="header-text">NEW YORK CITY WORD GUESS</div>           
         </header>
 
     <!--How to start-->
     <div class="container">
         <div class="start">
-            <p>What are some common things New York City is known for?</p>
-            <p id="directions-text">Press any key to start!</p>
+            <h3>What are some common places or things New York City is known for?
+            <br>
+            Press any key to start!</h3>
         </div>
+        
     <!--Game content-->
         <div class="game">
-            <p>Current word: <div id="blank-word">_ _ _ _ _ _ _</div></p>
-            <p>Wins: <span id="wins">0</span></p>          
+            <p>Current word: <div id="currentWord">_ _ _ _ _ _ _</div></p>
+            <p>Wins: <span id="wins">0</span></p> 
+            <p>Losses: <span id="losses">0</span></p>         
             <p>Guesses left: <span id="lives">10</span></p>
-            <p>Letters already guessed: <span id="letter-guesses"></span></p>
+            <p>Letters already guessed: <span id="letters-guessed"></span></p>
         </div>
     </div>
 

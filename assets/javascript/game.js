@@ -2,7 +2,7 @@ console.log("javascripts loaded") // makes sure javascript is loading from html
 
 // GLOBAL VARIABLES
 
-//words that will rotate throughout the game for the guesser
+//words that will rotate throughout the game for the player
 var words = [
      "empire state building", 
      "taxi", 
@@ -29,13 +29,13 @@ var chosenWord = "";  //chosen word from array
 var lettersInWord = []; //how many letters are in the word
 var blankLetters = 0;  //how many blanks we need to display the word
 var blanksAndRightGuesses = [];  //letters still remaining to be guessed (blanks) and correct letters guessed (revealed)
-var wrongGuesses = [];  //letters stored under letters already guessed
 
 
 //variables used for the start of the game settings and will be used later for if and else 
 var winCount = 0;  //keeps track of how many times player has won
 var guessesLeft = 10;  //keeps track of the number of guesses the player has left
 var losses = 0;  //keeps track of how many times the player lost
+var wrongGuesses = [];  //letters stored under letters already guessed
 
 //________________________________________________________
 // FUNCTIONS to generate the arrays
@@ -100,23 +100,32 @@ function checkLetters(letter) {
 
 function roundComplete() {
     console.log("Wins: " + winCount + " Losses: " + losses + " Guesses left:" + guessesLeft);
+
+    //make sure each round updates HTML to reflect the most recent information
+    document.getElementById("lives").innerHTML = guessesLeft;
+    document.getElementById("currentWord").innerHTML = blanksAndRightGuesses.join(" ");
+    document.getElementById("letters-guessed").innerHTML = wrongGuesses.join(", ");
+    
+    //checks if user won
+    if (lettersInWord.toString() == blanksAndRightGuesses.toString()) {
+        winCount++;
+        
+        //updates the win 
+        document.getElementById("wins").innerHTML = winCount;
+
+        gameStart();
+    }
+    else if (guessesLeft === 0) {
+        losses++; 
+        //updates page losses
+        document.getElementById("losses").innerHTML = losses;
+        
+        gameStart();
+    }
 }
 
-
-
-
-
-//resets the game to beginning stats
- //function reset() { 
-//    guessesLeft = 10;
-  //  blanksAndRightGuesses = [];
-  //  wrongGuesses = [];
-
-
 // MAIN PROCESS
-
 // initiates the code the first time
-gameStart() 
 
 // register key clicks
 document.onkeyup = function(event) {
@@ -125,36 +134,23 @@ document.onkeyup = function(event) {
      roundComplete()
      console.log(letterGuessed);
 
+     //doesn't allow user to guess same letter twice
+     document.onkeyup = function (event) {
+        var letterGuessed;
+       // captures keypress, eliminating repeat letters
+       if (event.keyCode >= 65 && event.keyCode <= 90) {
+         letterGuessed = event.key;
+
+         if(wrongGuesses.indexOf(letterGuessed)!==-1){
+            alert("You already guessed that letter.");
+            return;
+        }      
+    
+      // Runs code to check for correct guesses
+      checkLetters(letterGuessed);
+    
+      // Runs code that ends each round
+      roundComplete();
+         }  
+    }
 }
-
-
-
-
-   // if (lettersInWord.indexOf(event.key) === -1) {
-    //    guessesLeft--
-     //   if(guessesLeft === 0){
-      //      losses++
-       //     losses.innerHTML = losses;
-            // show a message saying you loose and reveal the word
-            // play again 
- 
-
-   // else{
-     //  for ( var i =0; i < lettersInWord.length; i++){
-       //   if (lettersInWord[i] === event.key){
-         //   blanksAndGuesses[i] = event.key
-   
-   // document.getElementById("currentWord").innerHTML = blanksAndGuesses.join(" ");
-     // if (blanksAndGuesses.indexOf("_") === -1){
-       //  winCount++
-        // wins.innerHTML = winCount;
-    //}
-
-  //  console.log(event.key);
-   // console.log(losses);
-   // console.log(winCount);
-
-  
-    // verify if the letter is included in the word to guess
-    // if yes you need to show the letters 
-    // if not include ( reduce theguessleft, show this to theuser, verify if have more guesleft, if not losses)

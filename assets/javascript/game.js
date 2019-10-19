@@ -88,8 +88,8 @@ function checkLetters(letter) {
   }
   //if letter wasn't found
   else {
-      wrongGuesses.push(letter);
-      guessesLeft--;
+      wrongGuesses.push(letter); //pushes wrong guessed letter to letters already guessed
+      guessesLeft--; //subtracts from the amount of guesses player has left
   }
 
  //testing and debugging
@@ -98,7 +98,7 @@ function checkLetters(letter) {
   console.log(letter);
 }
 
-function roundComplete() {
+function roundComplete() { 
     console.log("Wins: " + winCount + " Losses: " + losses + " Guesses left:" + guessesLeft);
 
     //make sure each round updates HTML to reflect the most recent information
@@ -108,18 +108,15 @@ function roundComplete() {
     
     //checks if user won
     if (lettersInWord.toString() == blanksAndRightGuesses.toString()) {
-        winCount++;
-        
+        winCount++; 
         //updates the win 
         document.getElementById("wins").innerHTML = winCount;
-
         gameStart();
     }
     else if (guessesLeft === 0) {
         losses++; 
         //updates page losses
         document.getElementById("losses").innerHTML = losses;
-        
         gameStart();
     }
 }
@@ -140,14 +137,11 @@ document.onkeyup = function(event) {
        // captures keypress, eliminating repeat letters
        if (event.keyCode >= 65 && event.keyCode <= 90) {
          letterGuessed = event.key;
-
          if(wrongGuesses.indexOf(letterGuessed)!==-1){
             return;
-        }      
-    
+        }         
       // Runs code to check for correct guesses
-      checkLetters(letterGuessed);
-    
+      checkLetters(letterGuessed);   
       // Runs code that ends each round
       roundComplete();
          }  

@@ -142,7 +142,6 @@ document.onkeyup = function(event) {
          letterGuessed = event.key;
 
          if(wrongGuesses.indexOf(letterGuessed)!==-1){
-            alert("You already guessed that letter.");
             return;
         }      
     

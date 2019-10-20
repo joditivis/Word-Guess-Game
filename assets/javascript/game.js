@@ -18,10 +18,11 @@ var words = [
      "brooklyn-bridge",
      "the-metropolitan-museum",
      "hot-dogs",
-     "rockefeller-center",
+     "reckefeller-center",
      "fifth-avenue",
      "grand-central-station",
-     "wall-street"]; 
+     "wall-street",
+     "where-dreams-are-made-of"]; 
 
 
 //variables that will be used later for functions
@@ -118,6 +119,7 @@ function roundComplete() {
     //checks if user won
     if (lettersInWord.toString() == blanksAndRightGuesses.toString()) {
         winCount++; 
+        alert("Woohoo! You guessed the right word! " + chosenWord.toUpperCase());
         //updates the win 
         document.getElementById("wins").innerHTML = winCount;
         gameStart();
@@ -136,7 +138,7 @@ function roundComplete() {
 gameStart();
 // register key clicks
 document.onkeyup = function(event) {
-    var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+     var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
      checkLetters(letterGuessed)
      roundComplete()
      console.log(letterGuessed);

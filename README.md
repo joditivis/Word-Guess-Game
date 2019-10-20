@@ -2,7 +2,7 @@
 **Link to Game: https://joditivis.github.io/Word-Guess-Game/**
 
 # About:
-Denver University Coding Bootcamp third week assignment: Create a Word Guess Game using JavaScript.
+University of Denver Coding Boot Camp third week assignment: This assigmnet required us to create a Word Guess Game using JavaScript.
 
 # How to Play:
 ```
@@ -26,7 +26,7 @@ Denver University Coding Bootcamp third week assignment: Create a Word Guess Gam
 * Page Colors found on https://coolors.co/3d3522-4a442d-386150-58b09c-caf7e2
 * Song by Taylor Swift found on https://mp3direct.org/
 
-# How it looks:
+# Features:
 ![Image](gamepage.png)
 
 

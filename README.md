@@ -14,6 +14,8 @@ Denver University Coding Bootcamp third week assignment: Create a Word Guess Gam
 
 - Try to get more wins than losses!
 
+- When you see a " - " in the current word, it is representing a space
+
 - Listen to a little tune while you play!
 ```
 

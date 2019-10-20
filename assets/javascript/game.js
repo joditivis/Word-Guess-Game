@@ -4,24 +4,24 @@ console.log("javascripts loaded") // makes sure javascript is loading from html
 
 //words that will rotate throughout the game for the player
 var words = [
-     "empire state building", 
+     "empire-state-building", 
      "taxi", 
      "broadway", 
-     "china town", 
-     "central park", 
-     "statue of liberty",
-     "coney island",
-     "big apple",
+     "china-town", 
+     "central-park", 
+     "statue-of-liberty",
+     "coney-island",
+     "big-apple",
      "traffic",
-     "concrete jungle",
-     "times square",
-     "brooklyn bridge",
-     "the metropolitan museum",
-     "hot dogs",
-     "rockefeller center",
-     "fifth avenue",
-     "grand central station",
-     "wall street"]; 
+     "concrete-jungle",
+     "times-square",
+     "brooklyn-bridge",
+     "the-metropolitan-museum",
+     "hot-dogs",
+     "rockefeller-center",
+     "fifth-avenue",
+     "grand-central-station",
+     "wall-street"]; 
 
 
 //variables that will be used later for functions
@@ -29,6 +29,7 @@ var chosenWord = "";  //chosen word from array
 var lettersInWord = []; //how many letters are in the word
 var blankLetters = 0;  //how many blanks we need to display the word
 var blanksAndRightGuesses = [];  //letters still remaining to be guessed (blanks) and correct letters guessed (revealed)
+var space ;
 
 
 //variables used for the start of the game settings and will be used later for if and else 
@@ -53,8 +54,16 @@ function gameStart() { //start of game function
 
 //populate blanksAndRightGuesses with correct number of blanks
     for (var i = 0; i < blankLetters; i++) { //takes the lettersInWord.length and determines the number of blanks needed
-        blanksAndRightGuesses.push("_"); //pushes the _ to show in place of each blank letter
+        //blanksAndRightGuesses.push("_"); //pushes the _ to show in place of each blank letter
+        if (lettersInWord[i] === "-") {
+            blanksAndRightGuesses.push("-");
+             space = 1;
+      } 
+      else {
+          blanksAndRightGuesses.push("_");
+      }
     }
+
     
 //connecting html aspects
     document.getElementById("currentWord").innerHTML = blanksAndRightGuesses.join(" "); //.join makes the blank letters appear without the commas like they are in the console
@@ -115,6 +124,7 @@ function roundComplete() {
     }
     else if (guessesLeft === 0) {
         losses++; 
+        alert("Bummer...the word was: " + chosenWord);
         //updates page losses
         document.getElementById("losses").innerHTML = losses;
         gameStart();

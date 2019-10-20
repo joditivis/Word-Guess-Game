@@ -123,7 +123,7 @@ function roundComplete() {
 
 // MAIN PROCESS
 // initiates the code the first time
-
+gameStart();
 // register key clicks
 document.onkeyup = function(event) {
     var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
@@ -137,6 +137,7 @@ document.onkeyup = function(event) {
        // captures keypress, eliminating repeat letters
        if (event.keyCode >= 65 && event.keyCode <= 90) {
          letterGuessed = event.key;
+
          if(wrongGuesses.indexOf(letterGuessed)!==-1){
             return;
         }         

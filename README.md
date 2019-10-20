@@ -5,15 +5,16 @@
 Denver University Coding Bootcamp third week assignment: Create a Word Guess Game using JavaScript.
 
 # How to Play:
-```New York City Theme and Category: What are some common places or things New York City is known for?
+```
+- New York City Theme and Category: What are some common places or things New York City is known for?
 
-Guess the correct word before you run out of guesses to recieve a win point for that round!
+- Guess the correct word before you run out of guesses to recieve a win point for that round!
 
-If you run out of guesses before completing the word, a loss point is added for that round.
+- If you run out of guesses before completing the word, a loss point is added for that round.
 
-Try to get more wins than losses!
+- Try to get more wins than losses!
 
-You can also listen to a little tune while you play!
+- Listen to a little tune while you play!
 ```
 
 # Tools + Languages Used:

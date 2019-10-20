@@ -8,7 +8,7 @@ University of Denver Coding Boot Camp third week assignment: This assigmnet requ
 ```
 - New York City Theme and Category: What are some common places or things New York City is known for?
 
-- Guess the correct word before you run out of guesses to recieve a win point for that round!
+- Guess the correct word before you run out of guesses to receive a win point for that round!
 
 - If you run out of guesses before completing the word, a loss point is added for that round.
 
